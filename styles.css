@@ -4,8 +4,13 @@ body {
 
 /* Top bar */
 .topbar {
-  flex-direction: column;
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 30px;
 }
 
 .nav-menu {
