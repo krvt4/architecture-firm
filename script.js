@@ -1,13 +1,22 @@
-let current = 0;
-const slides = document.querySelectorAll(".slide");
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
 
 function showSlide(index) {
   slides.forEach((slide, i) => {
-    slide.classList.toggle("active", i === index);
+    slide.classList.remove('active');
+    if (i === index) {
+      slide.classList.add('active');
+    }
   });
 }
 
-setInterval(() => {
-  current = (current + 1) % slides.length;
-  showSlide(current);
-}, 4000); // changes every 4 seconds
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+// Show first slide immediately
+showSlide(currentSlide);
+
+// Change slide every 3 seconds
+setInterval(nextSlide, 3000);
