@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Architecture Firm Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MDC-Inspired Website</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <h1>Welcome to Architecture Firm!</h1>
-    <p>This is the homepage of our architecture firm.</p>
-    </body>
+  <header class="navbar">
+    <h1 class="logo">MDC-Inspired</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Welcome to Our Site</h2>
+      <p>This is a clean, Material-inspired layout using HTML, CSS, and JS.</p>
+      <button onclick="sayHello()">Click Me</button>
+    </section>
+    <section class="card">
+      <h2>Another Section</h2>
+      <p>Cards help organize content clearly and with emphasis.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
 </html>
