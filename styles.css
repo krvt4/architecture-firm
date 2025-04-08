@@ -1,77 +1,65 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.about-section {
+  padding: 60px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
   background-color: #fff;
 }
 
-/* Navbar */
-.topbar {
+.about-content {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  padding: 10px 30px;
-  background-color: white;
-  border-bottom: 1px solid #ccc;
-}
-
-.logo-container {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  height: 40px;
-  margin-right: 12px;
-}
-
-.studio-name {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #002855;
-}
-
-.nav-menu ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-}
-
-.nav-menu a {
-  text-decoration: none;
-  color: #1a0dab;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: color 0.3s ease;
-}
-
-.nav-menu a:hover {
-  color: #0056b3;
-}
-
-/* Slider */
-.slider {
-  position: relative;
+  gap: 40px;
+  max-width: 1200px;
   width: 100%;
-  height: 550px;
-  overflow: hidden;
 }
 
-.slider img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
+.about-text {
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
-.slider img.active {
-  opacity: 1;
-  z-index: 1;
+.about-video iframe {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.footer-section {
+  background-color: #1c1c1c;
+  color: white;
+  padding: 60px 40px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-posts,
+.footer-anniversary {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-logo {
+  text-align: center;
+}
+
+.footer-logo img {
+  max-width: 150px;
+  margin-bottom: 20px;
+}
+
+.social-icons a img {
+  width: 24px;
+  margin: 0 8px;
+  filter: invert(1);
 }
