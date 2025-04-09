@@ -94,19 +94,21 @@ body, html {
 
 /* Hamburger Menu */
 .hamburger {
-  display: flex; /* Make it visible on all screen sizes */
-  flex-direction: column;
-  gap: 6px;
+  display: flex; /* Make it visible and a flex container */
+  flex-direction: column; /* Stack the spans */
+  justify-content: space-between; /* Distribute space between lines */
+  height: 20px; /* Adjust height as needed */
+  width: 30px; /* Adjust width as needed */
   cursor: pointer;
   z-index: 1000;
   margin-left: 30px; /* Add spacing from the nav on larger screens */
 }
 
 .hamburger span {
-  width: 25px;
-  height: 3px;
-  background: #333;
   display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #333; /* Example color */
   transition: all 0.3s ease;
 }
 
@@ -231,10 +233,14 @@ body, html {
   }
 
   .hamburger {
-    display: flex; /* Show hamburger on smaller screens */
-    position: absolute;
+    display: flex; /* Ensure it's still flex on smaller screens */
+    position: absolute; /* Keep absolute positioning for mobile */
     right: 30px;
     top: 50%;
     transform: translateY(-50%);
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    width: 30px;
   }
 }
