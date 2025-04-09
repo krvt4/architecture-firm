@@ -119,7 +119,6 @@ body, html {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  border-bottom: 1px solid #ccc; /* Add a separator line below the slider */
 }
 
 .slide {
@@ -148,6 +147,7 @@ body, html {
 .build-section {
   padding: 60px 30px;
   background: #f9f9f9;
+  border-top: 1px solid #ccc; /* Add a separator line above the build section */
 }
 
 .build-content-row {
@@ -249,4 +249,30 @@ body, html {
 /* Remove the old .build-content video styles if you are no longer using the video here */
 .build-content .video {
   display: none; /* Hide the video if you're replacing it with images */
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: #ffab65;
+  color: white;
+  padding: 40px 30px;
+}
+
+.footer-post,
+.footer-celebrate {
+  flex: 1 1 400px;
+  margin-bottom: 20px;
+}
+
+.footer h4 {
+  margin-top: 0;
+  color: #ffcc00;
+}
+
+.footer .logo-50 {
+  margin-top: 20px;
+  height: 80px;
 }
