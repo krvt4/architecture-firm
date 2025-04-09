@@ -119,6 +119,7 @@ body, html {
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  border-bottom: 1px solid #ccc; /* Add a separator line below the slider */
 }
 
 .slide {
@@ -145,67 +146,53 @@ body, html {
 
 /* Build Section */
 .build-section {
-  display: flex;
-  justify-content: center;
   padding: 60px 30px;
   background: #f9f9f9;
 }
 
-.build-content {
+.build-content-row {
   max-width: 1200px;
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
-  align-items: center;
+  margin: 0 auto;
+  display: flex; /* Enable flexbox for side-by-side layout */
+  gap: 40px; /* Spacing between text and images */
+  align-items: center; /* Vertically align text and images */
+  flex-wrap: wrap; /* Allow content to wrap on smaller screens */
 }
 
-.build-content .text {
-  flex: 1 1 400px;
+.build-text {
+  flex: 1 1 400px; /* Take up at least 400px width, grow and shrink */
 }
 
-.build-content .text h2 {
+.build-text h2 {
   font-size: 2rem;
   color: #002855;
   margin-bottom: 15px;
 }
 
-.build-content .text p {
+.build-text p {
   font-size: 1rem;
   line-height: 1.6;
   color: #333;
 }
 
-.build-content .video iframe {
-  width: 100%;
-  max-width: 560px;
-  height: 315px;
-  border-radius: 8px;
+.build-images {
+  flex: 1 1 300px; /* Take up at least 300px width, grow and shrink */
+  display: flex; /* Arrange images horizontally */
+  gap: 20px; /* Spacing between images */
+  flex-wrap: wrap; /* Allow images to wrap on smaller screens */
+  justify-content: flex-end; /* Align images to the right */
 }
 
-/* Footer */
-.footer {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  background: #1a1a1a;
-  color: white;
-  padding: 40px 30px;
+.build-images img {
+  width: calc(50% - 10px); /* Two images side-by-side with spacing */
+  max-width: 100%; /* Ensure images don't exceed their container */
+  height: auto;
+  border-radius: 8px; /* Optional: Add rounded corners */
 }
 
-.footer-post,
-.footer-celebrate {
-  flex: 1 1 400px;
-  margin-bottom: 20px;
-}
-
-.footer h4 {
-  margin-top: 0;
-  color: #ffcc00;
-}
-
-.footer .logo-50 {
-  margin-top: 20px;
-  height: 80px;
+/* If you have three images */
+.build-images img:nth-child(3) {
+  width: 100%; /* Make the third image take full width if it wraps */
 }
 
 /* Responsive Styles */
@@ -243,4 +230,23 @@ body, html {
     height: 20px;
     width: 30px;
   }
+
+  .build-content-row {
+    flex-direction: column; /* Stack text and images on smaller screens */
+    align-items: flex-start; /* Align items to the left on smaller screens */
+  }
+
+  .build-images {
+    justify-content: flex-start; /* Align images to the left on smaller screens */
+  }
+
+  .build-images img {
+    width: 100%; /* Make images full width on smaller screens */
+    max-width: none; /* Remove max-width on smaller screens */
+  }
+}
+
+/* Remove the old .build-content video styles if you are no longer using the video here */
+.build-content .video {
+  display: none; /* Hide the video if you're replacing it with images */
 }
