@@ -5,12 +5,12 @@
   box-sizing: border-box;
 }
 
-body, html {
+body {
   font-family: 'Barlow Condensed', sans-serif;
   margin: 0;
   padding: 0;
+  padding-top: 60px; /* Adjust this value to be slightly more than the height of your top bar */
 }
-
 /* Fixed Top Bar */
 .topbar-wrapper {
   width: 100%;
@@ -146,8 +146,8 @@ body, html {
 /* Build Section */
 .build-section {
   padding: 60px 30px;
-  background: #f9f9f9;
-  border-top: 1px solid #ccc; /* Add a separator line above the build section */
+  background: #ffffff;
+  border-top: 2px solid #FFE5B4; /* Add a separator line above the build section */
 }
 
 .build-content-row {
@@ -256,7 +256,7 @@ body, html {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  background: #ffab65;
+  background: #FFE5B4;
   color: white;
   padding: 40px 30px;
 }
