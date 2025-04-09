@@ -1,13 +1,17 @@
 body {
   font-family: 'Barlow Condensed', sans-serif;
+  margin: 0;
 }
 
-/* Top bar */
+/* Fixed Top Bar */
 .topbar-wrapper {
   width: 100%;
   background: white;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); 
-  position: relative; /* Ensure absolute positioning within the topbar-wrapper */
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
 }
 
 .topbar {
@@ -17,14 +21,14 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px 30px;
-  position: relative; /* Keep the relative positioning to control the layout */
+  position: relative;
 }
 
 .logo-container {
   position: absolute;
-  left: 0; /* Place the logo at the far left corner */
-  top: 50%; /* Vertically center the logo */
-  transform: translateY(-50%); /* Perfect vertical centering */
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   align-items: center;
 }
@@ -40,7 +44,6 @@ body {
   color: #002855;
   margin: 0;
 }
-
 
 .nav-menu ul {
   list-style: none;
@@ -69,23 +72,37 @@ body {
   left: 0;
   height: 2px;
   width: 0;
-  background-color: #c69c6d; /* Match HQ gold color */
+  background-color: #c69c6d;
   transition: width 0.3s ease;
-}
-
-.nav-menu a:hover {
-  color: #000;
 }
 
 .nav-menu a:hover::after {
   width: 100%;
 }
 
-/* Slider styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburger span {
+  width: 25px;
+  height: 2px;
+  background: #333;
+}
+
+/* Slider */
 .slider {
+  margin-top: 80px; /* Push down below fixed header */
   position: relative;
   width: 100%;
-  height: 600px; /* Fixed height to avoid layout shift */
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -111,7 +128,7 @@ body {
   object-fit: cover;
 }
 
-/* New Section Styles */
+/* Build Section */
 .build-section {
   display: flex;
   justify-content: center;
@@ -160,7 +177,8 @@ body {
   padding: 40px 30px;
 }
 
-.footer-post, .footer-celebrate {
+.footer-post,
+.footer-celebrate {
   flex: 1 1 400px;
   margin-bottom: 20px;
 }
@@ -173,4 +191,32 @@ body {
 .footer .logo-50 {
   margin-top: 20px;
   height: 80px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    width: 100%;
+  }
+
+  .nav-menu.active {
+    display: block;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
 }
