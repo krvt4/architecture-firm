@@ -24,7 +24,7 @@ body, html {
 
 .topbar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between; /* Updated to space-between */
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
@@ -51,6 +51,10 @@ body, html {
   font-weight: 700;
   color: #002855;
   margin: 0;
+}
+
+.nav-menu {
+  margin-left: auto; /* Push navigation to the right */
 }
 
 .nav-menu ul {
@@ -90,15 +94,12 @@ body, html {
 
 /* Hamburger Menu */
 .hamburger {
-  display: none;
+  display: none; /* Initially hidden */
   flex-direction: column;
   gap: 6px;
   cursor: pointer;
-  position: absolute;
-  right: 30px;
-  top: 50%;
-  transform: translateY(-50%);
   z-index: 1000;
+  margin-left: 30px; /* Add spacing from the nav on larger screens */
 }
 
 .hamburger span {
@@ -111,7 +112,7 @@ body, html {
 
 /* Slider */
 .slider {
-  margin-top: 80px; /* Height of the fixed header */
+  margin-top: 0; /* Removed the top margin that created the space */
   position: relative;
   width: 100%;
   height: 100vh;
@@ -208,7 +209,7 @@ body, html {
 /* Responsive Styles */
 @media (max-width: 768px) {
   .nav-menu {
-    display: none;
+    display: none; /* Hide text menu on smaller screens */
     position: absolute;
     top: 100%;
     right: 0;
@@ -230,6 +231,10 @@ body, html {
   }
 
   .hamburger {
-    display: flex;
+    display: flex; /* Show hamburger on smaller screens */
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
